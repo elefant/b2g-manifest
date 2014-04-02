@@ -9,9 +9,11 @@
            fetch="https://git.mozilla.org/b2g" />
   <remote name="b2g"
            fetch="git://github.com/mozilla-b2g/" />
+  <remote name="elefant"
+           fetch="git://github.com/elefant/" />
   <remote name="mozilla"
 	  fetch="git://github.com/mozilla/" />
-  <remote name="mozillaorg" 
+  <remote name="mozillaorg"
       fetch="https://git.mozilla.org/releases" />
   <remote name="apitrace" fetch="git://github.com/apitrace/" />
   <default revision="refs/tags/android-4.0.4_r2.1"
@@ -19,12 +21,12 @@
            sync-j="4" />
 
   <!-- Gonk specific things and forks -->
-  <project path="build" name="platform_build" remote="b2g" revision="master">
+  <project path="build" name="platform_build" remote="elefant" revision="dev/emu-wifi">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="dalvik" name="fake-dalvik" remote="b2g" revision="master" />
   <project path="gaia" name="gaia.git" remote="mozillaorg" revision="master" />
-  <project path="gecko" name="gecko.git" remote="mozillaorg" revision="master" />
+  <project path="gecko" name="gecko-dev" remote="elefant" revision="dev/emu-wifi" />
   <project path="gonk-misc" name="gonk-misc" remote="b2g" revision="master" />
   <project path="rilproxy" name="rilproxy" remote="b2g" revision="master" />
   <project path="hardware/ril" name="platform_hardware_ril" remote="b2g" revision="master"/>
@@ -105,7 +107,7 @@
 
   <!-- Emulator specific things -->
   <project path="development" name="android-development" remote="b2g" revision="emu-fix" />
-  <project path="device/generic/goldfish" name="device_generic_goldfish" remote="b2g" revision="master" />
+  <project path="device/generic/goldfish" name="device_generic_goldfish" remote="elefant" revision="dev/emu-wifi" />
   <project path="external/iproute2" name="platform/external/iproute2" />
   <project path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" revision="aosp-new/master" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" revision="aosp-new/master" />
